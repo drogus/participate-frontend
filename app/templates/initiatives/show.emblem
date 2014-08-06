@@ -5,3 +5,10 @@
 .description
   p
     model.description
+
+// link-to 'initiatives.show' | Support this initiative
+.support
+  if isSupported
+    a click="removeSupport" href="#" Remove Support for this initiative
+  else
+    a click="supportIt" href="#" Support this initiative
