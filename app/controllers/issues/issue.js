@@ -1,12 +1,18 @@
 import Ember from 'ember';
 
 var IssueController = Ember.ObjectController.extend({
+  setupController: function(controller, model) {
+    controller.set('model', issue);
+  },
 
   actions: {
     toggleExpand: function() {
       this.toggleProperty('isExpanded');
 
-      //this.transitionToRoute('/issues/' + issue_id)
+      this.transitionToRoute('/issues/' + this.get('id'));
+     // debugger;
+
+      //this.transitionToRoute('/issues/' + issue.id)
       
      //  var issue = issuesContent.issue;  //this.modelFor('issue');
      //  var issueUrl = issue.get('url');
@@ -15,7 +21,12 @@ var IssueController = Ember.ObjectController.extend({
     }
   },
 
-  isExpanded: false
+  isExpanded: false,
+
+  geturl: function() {
+    console.log('url', this.get('router.url'))
+  },
+
 
   //   // If our current issue is changed, notify the router
   // _currentIssueChanged: function() {
