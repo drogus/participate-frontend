@@ -6,7 +6,7 @@ var IssueController = Ember.ObjectController.extend({
     toggleExpand: function() {
       this.toggleProperty('isExpanded');
 
-      this.transitionToRoute('/issues/' + issue_id)
+      //this.transitionToRoute('/issues/' + issue_id)
       
      //  var issue = issuesContent.issue;  //this.modelFor('issue');
      //  var issueUrl = issue.get('url');
@@ -15,15 +15,15 @@ var IssueController = Ember.ObjectController.extend({
     }
   },
 
-  isExpanded: false,
+  isExpanded: false
 
-    // If our current issue is changed, notify the router
-  _currentIssueChanged: function() {
-    var currentIssue = this.get('currentIssue');
-    if (currentIssue) {
-      this.send('issueChangedRoute', currentIssue);
-    }
-  }.observes('currentIssue')
+  //   // If our current issue is changed, notify the router
+  // _currentIssueChanged: function() {
+  //   var currentIssue = this.get('currentIssue');
+  //   if (currentIssue) {
+  //     this.send('issueChangedRoute', currentIssue);
+  //   }
+  // }.observes('currentIssue')
 
   // ORIGINAL FROM DISCOURSE
   //   // If our current post is changed, notify the router
