@@ -3,7 +3,10 @@ h2 List of issues
 ul.issues
   each model itemController="issues/issue"
     li.issue
-      = link-to "issues.issue" this
-        = title
       if isExpanded
+        = link-to "issues"
+          = title
         p.description #{description}
+      else
+        = link-to "issues.issue" this
+          = title
